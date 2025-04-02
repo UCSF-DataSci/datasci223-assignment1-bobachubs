@@ -14,6 +14,7 @@ Example:
 
 import sys
 import hashlib
+import re
 
 def hash_email(email):
     """
@@ -29,7 +30,9 @@ def hash_email(email):
     # 1. Convert the email string to bytes
     # 2. Create a SHA-256 hash of the email
     # 3. Return the hash in hexadecimal format
-    pass
+    str_byte = str.encode(email)
+    m = hashlib.sha256(str_byte)
+    return m.hexdigest()
 
 def write_hash_to_file(hash_value, filename="hash.email"):
     """
@@ -43,7 +46,14 @@ def write_hash_to_file(hash_value, filename="hash.email"):
     # 1. Open the file in write mode
     # 2. Write the hash value to the file
     # 3. Close the file
-    pass
+    with open(filename, 'w') as f:
+        f.write(hash_value)
+    f.close()
+
+# referenced online for email string format
+def is_valid_email(email):
+    pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    return re.match(pattern, email) is not None
 
 def main():
     """
@@ -54,7 +64,13 @@ def main():
     # 2. If not, print an error message and exit with a non-zero status
     # 3. If yes, hash the email address
     # 4. Write the hash to a file named "hash.email"
-    pass
+    email = sys.argv[1]
+    if not is_valid_email(email):
+        raise Exception("Please input a valid email")
+    email_hash = hash_email(email)
+    print(email_hash)
+    write_hash_to_file(email_hash, 'hash.email')
 
 if __name__ == "__main__":
     main()
+

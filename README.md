@@ -1,3 +1,5 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/6fFVVHyL)
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=18983538)
 # GitHub and Python Foundations Assignment
 
 ## Overview
@@ -52,6 +54,12 @@ Replace the "Part 1" section with:
 - What you're hoping to get out of this course
 - Topics you would like to see included
 - A musical recommendation and a link to something about it (song, album, artist)
+
+### About Me
+- Name: Sarah
+- Navigating common python packages for data analysis and hammering in command line arguments
+- ^
+- Maye
 
 ### Part 2: Complete the email_hasher.py Script
 The email_hasher.py script should:
