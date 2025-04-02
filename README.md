@@ -55,6 +55,12 @@ Replace the "Part 1" section with:
 - Topics you would like to see included
 - A musical recommendation and a link to something about it (song, album, artist)
 
+### About Me
+- Name: Sarah
+- Navigating common python packages for data analysis and hammering in command line arguments
+- ^
+- Maye
+
 ### Part 2: Complete the email_hasher.py Script
 The email_hasher.py script should:
 1. Accept an email address as a command line argument
