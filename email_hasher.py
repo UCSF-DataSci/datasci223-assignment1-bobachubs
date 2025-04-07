@@ -53,11 +53,6 @@ def write_hash_to_file(hash_value, filename="hash.email"):
     f.close()
     return hash_value
 
-# referenced online for email string format
-def is_valid_email(email):
-    pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-    return re.match(pattern, email) is not None
-
 def main():
     """
     Main function to process command line arguments and execute the script.
@@ -67,14 +62,13 @@ def main():
     # 2. If not, print an error message and exit with a non-zero status
     # 3. If yes, hash the email address
     # 4. Write the hash to a file named "hash.email"
-    email = sys.argv[1]
-    if not is_valid_email(email):
+
+    if len(sys.argv) != 2:
         raise Exception("Please input a valid email")
-    else:
-        email_hash = hash_email(email)
-    # print(email_hash)
-        write_hash_to_file(email_hash, 'hash.email')
-    return email_hash
+    email = sys.argv[1]
+    email_hash = hash_email(email)
+    write_hash_to_file(email_hash, 'hash.email')
+    return
 
 if __name__ == "__main__":
     main()
