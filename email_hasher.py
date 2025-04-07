@@ -32,6 +32,7 @@ def hash_email(email):
     # 3. Return the hash in hexadecimal format
     str_byte = str.encode(email)
     m = hashlib.sha256(str_byte)
+    print(m.hexdigest())
     return m.hexdigest()
 
 def write_hash_to_file(hash_value, filename="hash.email"):
@@ -68,7 +69,7 @@ def main():
     if not is_valid_email(email):
         raise Exception("Please input a valid email")
     email_hash = hash_email(email)
-    print(email_hash)
+    # print(email_hash)
     write_hash_to_file(email_hash, 'hash.email')
 
 if __name__ == "__main__":
