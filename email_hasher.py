@@ -50,6 +50,7 @@ def write_hash_to_file(hash_value, filename="hash.email"):
     with open(filename, 'w') as f:
         f.write(hash_value)
     f.close()
+    pass
 
 # referenced online for email string format
 def is_valid_email(email):
@@ -71,6 +72,7 @@ def main():
     email_hash = hash_email(email)
     # print(email_hash)
     write_hash_to_file(email_hash, 'hash.email')
+    pass
 
 if __name__ == "__main__":
     main()
